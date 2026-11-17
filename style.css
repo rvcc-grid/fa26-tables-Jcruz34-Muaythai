@@ -1,3 +1,117 @@
 body {
   background-color: aliceblue;
 }
+:root {
+  --sky-top: #4a9ff5;
+  --sky-bottom: #cfe8fc;
+  --card: #ffffff;
+  --ink: #1f2d3d;
+  --muted: #5f7285;
+  --line: #e1ebf5;
+  --accent: #1e78d6;
+  --warm: #e8590c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(var(--sky-top), var(--sky-bottom)) fixed;
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Title */
+h1 {
+  margin: 0;
+  padding: 2.5rem 1rem 1rem;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+h1::before {
+  
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+.table-container {
+  max-width: 1000px;
+  margin: 1.5rem auto 3rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+}
+
+#data {
+  min-width: 800px;
+  background: var(--card);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(20, 60, 110, 0.2);
+  overflow: hidden;
+}
+
+
+.table-container .tg {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container .tg th,
+.table-container .tg td {
+  padding: 0.85rem 1rem;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink);
+}
+
+.table-container .tg th {
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.table-container .tg tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container .tg tbody tr:nth-child(even) td {
+  background: #f5faff;
+}
+
+.table-container .tg tbody tr:hover td {
+  background: #e3f1ff;
+}
+
+
+.table-container .tg td:first-child {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.table-container .tg td:last-child {
+  color: var(--warm);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  h1 { padding-top: 1.5rem; }
+  .table-container { margin-top: 1rem; }
+}
